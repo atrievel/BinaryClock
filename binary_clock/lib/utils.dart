@@ -1,22 +1,21 @@
 import 'package:intl/intl.dart';
 
 class BinaryTimeConverter {
-  List<String> binaryInts;
+  List<String> binaryIntegers;
 
-  // get each digit of the binary string
-  get hoursTen => binaryInts[0];
-  get hoursOne => binaryInts[1];
-  get minutesTen => binaryInts[2];
-  get minutesOne => binaryInts[3];
-  get secondsTen => binaryInts[4];
-  get secondsOne => binaryInts[5];
+  get hourTens => binaryIntegers[0];
+  get hourOnes => binaryIntegers[1];
+  get minuteTens => binaryIntegers[2];
+  get minuteOnes => binaryIntegers[3];
+  get secondTens => binaryIntegers[4];
+  get secondOnes => binaryIntegers[5];
 
   BinaryTimeConverter() {
     DateTime now = DateTime.now();
 
     // convert current time to a list of binary strings
     // pad left with 0s if the digit doesn't exist
-    binaryInts = DateFormat('Hms')
+    binaryIntegers = DateFormat('Hms')
         .format(now)
         .replaceAll(':', '')
         .split('')
